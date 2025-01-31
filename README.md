@@ -344,7 +344,11 @@
     -
 20. How to call 5 APIs in parallel and do something after all 5 responses have come?
     => To call 5 APIs in parallel and do something after all 5 responses have come, you can use Promise.all(). This method allows you to wait for all promises (API calls) to resolve before proceeding with the next step.
-21. Divide a website Ui into small components for JS framework. 22. What happens in the background when I enter a website URL in the browser and hit enter?
+    -
+    -
+    -
+21. Divide a website Ui into small components for JS framework.
+22. What happens in the background when I enter a website URL in the browser and hit enter?
 
 # YOUTUBE LINK
 
