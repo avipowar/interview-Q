@@ -42,11 +42,11 @@
     => Event Delegation:
     What it means: Instead of adding individual event listeners to each child element, you add a single event listener to the parent element. The parent listens for events that happen on its child elements.
 
-                => Why use it:
+                - Why use it:
                 It makes the code more efficient when you have many child elements or when elements are added dynamically (after the page loads).
                 It also reduces the number of event listeners, which improves performance.
 
-                => Example: Imagine you have a list of buttons, and you want to handle clicks on all of them.
+                - Example: Imagine you have a list of buttons, and you want to handle clicks on all of them.
                    <!-- HTML -->
 
                     <div id="parent">
@@ -68,34 +68,34 @@
                     What happens:
                     Clicking any button inside the parent div will trigger the event. The parent listens for clicks on any child element (.child), even if new buttons are added later.
 
-    => Event Bubbling: moves (or "bubbles") up through
-    What it means: When you click an element, the event doesn’t stop there. It "bubbles up" from the clicked element to its parent, grandparent, and so on. Each parent element can handle the event if it has an event listener.
+    - Event Bubbling: moves (or "bubbles") up through
+      What it means: When you click an element, the event doesn’t stop there. It "bubbles up" from the clicked element to its parent, grandparent, and so on. Each parent element can handle the event if it has an event listener.
 
-            => Why use it:
-            It allows you to handle events at different levels of the DOM (document structure).
-            You can control the flow of events by stopping the bubble at certain points.
+              => Why use it:
+              It allows you to handle events at different levels of the DOM (document structure).
+              You can control the flow of events by stopping the bubble at certain points.
 
-            => Example: Imagine you have a button inside a div, and both the button and the div have event listeners.
-            =<!-- HTML -->
-            <div id="parent">
-            <button id="child">Click me</button>
-            </div>
+              => Example: Imagine you have a button inside a div, and both the button and the div have event listeners.
+              =<!-- HTML -->
+              <div id="parent">
+              <button id="child">Click me</button>
+              </div>
 
-                <!-- javascript -->
-                // Event listener for the div
-                document.getElementById('parent').addEventListener('click', function() {
-                alert('Parent clicked!');
-                });
+                  <!-- javascript -->
+                  // Event listener for the div
+                  document.getElementById('parent').addEventListener('click', function() {
+                  alert('Parent clicked!');
+                  });
 
-                // Event listener for the button
-                document.getElementById('child').addEventListener('click', function() {
-                alert('Button clicked!');
-                });
+                  // Event listener for the button
+                  document.getElementById('child').addEventListener('click', function() {
+                  alert('Button clicked!');
+                  });
 
-                What happens:
-                When you click the button, the button’s alert shows up first: Button clicked!.
-                Then, the event bubbles up to the parent div, and its alert shows up: Parent clicked!.
-                This is event bubbling—the event starts at the child (button) and then bubbles up to the parent (div).
+                  What happens:
+                  When you click the button, the button’s alert shows up first: Button clicked!.
+                  Then, the event bubbles up to the parent div, and its alert shows up: Parent clicked!.
+                  This is event bubbling—the event starts at the child (button) and then bubbles up to the parent (div).
 
 8.  What are closures? Uses of Closures?
     => What are Closures?
@@ -112,9 +112,9 @@
         const closureFunction = outer(); // outer function runs and returns the inner function
         closureFunction(); // Outputs: Hello, world!
 
-    => In Short:
-    Closure = A function that remembers its surrounding variables.
-    Why use it? It helps keep data private, create flexible functions, and handle events.
+    - In Short:
+      Closure = A function that remembers its surrounding variables.
+      Why use it? It helps keep data private, create flexible functions, and handle events.
 
 9.  What is the need for JS Frameworks?
     => JavaScript frameworks make coding faster and easier by providing tools and ready-made solutions. They help manage big projects, save time, and ensure your app works smoothly on all browsers.
@@ -164,31 +164,31 @@
 12. Difference between Pure Components vs High Order Components?
     => Pure Components: These are React components that automatically check if they need to re-render. They only re-render if their props or state change, which helps improve performance.
 
-    => Higher-Order Components (HOCs): These are functions that take a component and return a new, enhanced version of it. They are used to share common functionality between components, like adding extra features or data.
+    - Higher-Order Components (HOCs): These are functions that take a component and return a new, enhanced version of it. They are used to share common functionality between components, like adding extra features or data.
 
 13. Difference between State vs Props vs Refs?
     => 1) State: Internal data that a component manages and can change (e.g., a counter value).
 
-    => 2) Props: Data passed from a parent component to a child component. It’s read-only and can’t be changed by the child.
-    Example: <Child name="John" /> (here, name is a prop).
+    - 2. Props: Data passed from a parent component to a child component. It’s read-only and can’t be changed by the child.
+         Example: <Child name="John" /> (here, name is a prop).
 
-    => 3) Refs: A way to directly access and manipulate DOM elements (e.g., focusing an input field).
-    Example: const inputRef = useRef();
-    import React, { useRef } from 'react';
+    - 3.  Refs: A way to directly access and manipulate DOM elements (e.g., focusing an input field).
+          Example: const inputRef = useRef();
+          import React, { useRef } from 'react';
 
-        function FocusInput() {
-            const inputRef = useRef(); // Create a ref
+              function FocusInput() {
+                  const inputRef = useRef(); // Create a ref
 
-            const focusInput = () => {
-                inputRef.current.focus(); // Focus the input field
-            };
+                  const focusInput = () => {
+                      inputRef.current.focus(); // Focus the input field
+                  };
 
-            return (
-                <div>
-                    <input ref={inputRef} type="text" placeholder="Type here..." />
-                    <button onClick={focusInput}>Focus Input</button>
-                </div>
-            );
+                  return (
+                      <div>
+                          <input ref={inputRef} type="text" placeholder="Type here..." />
+                          <button onClick={focusInput}>Focus Input</button>
+                      </div>
+                  );
 
     }
     What Happens Here:
@@ -218,7 +218,7 @@
     3. Use lifecycle methods like componentDidMount, componentDidUpdate, etc.
     4. More code and harder to read.
 
-    => Function/Hooks-Based Components:
+    - Function/Hooks-Based Components:
 
     1. Use plain JavaScript functions.
     2. Use hooks like useState and useEffect for state and lifecycle.
@@ -226,13 +226,127 @@
     4. Modern and recommended way to write React components.
 
 16. What are Fragments in ReactJs?
+    => Fragments in React help to group multiple elements without adding extra <div> tags in the HTML.
+
+    - Why Use Fragments?
+      1. If we don’t use fragments, React forces us to wrap elements inside a <div>, which can create extra unwanted HTML tags.
+      1. Fragments keep the HTML clean and improve performance by reducing unnecessary elements in the DOM.
+
 17. How can you maintain the State of an app in complex applications?
+    =>
+
+          - Local Component State
+            For simple cases, use useState inside a component.
+            Example :
+            import React, { useState } from 'react';
+
+                function Counter() {
+                    const [count, setCount] = useState(0);
+
+                    return (
+                        <div>
+                        <p>{count}</p>
+                        <button onClick={() => setCount(count + 1)}>Increment</button>
+                        </div>
+                    );
+
+            }
+
+    - Lifting State Up
+      When multiple components need access to the same state, lift state up to a common parent.
+      Example :
+      function Parent() {
+      const [count, setCount] = useState(0);
+
+      return (
+      <Child count={count} setCount={setCount} />
+      );
+
+      }
+
+      function Child({ count, setCount }) {
+      return <button onClick={() => setCount(count + 1)}>Increment</button>;
+      }
+
+    - Context API
+      For global state, React Context can be used to pass state through the app without prop drilling.
+      Example :
+      const CountContext = React.createContext();
+
+            function App() {
+            const [count, setCount] = useState(0);
+
+            return (
+                <CountContext.Provider value={{ count, setCount }}>
+                <Counter />
+                </CountContext.Provider>
+            );
+            }
+
+            function Counter() {
+                const { count, setCount } = useContext(CountContext);
+                return <button onClick={() => setCount(count + 1)}>{count}</button>;
+            }
+
+    - State Management Libraries (Redux)
+      For large apps, use libraries like Redux to manage state globally.
+      Example (Redux):
+      import { createStore } from 'redux';
+
+            const store = createStore((state = 0, action) => {
+                if (action.type === 'INCREMENT') return state + 1;
+                return state;
+            });
+
+            function Counter() {
+                const count = store.getState();
+                return <button onClick={() => store.dispatch({ type: 'INCREMENT' })}>{count}</button>;
+            }
+
 18. Have you thought about implementing 2-way data binding?
+    =>
+    Two-Way Data Binding in React
+    In React, two-way data binding means syncing data between the state and UI. When you change the state, the UI updates automatically, and when you change the UI (like typing in an input), the state updates too.
+
+        - How to Implement:
+          - State is tied to the input field using the value prop.
+          - Input change is handled using the onChange event to update the state.
+
+        Example:
+
+        import React, { useState } from 'react';
+
+            function TwoWayBinding() {
+            const [inputValue, setInputValue] = useState('');
+
+            // Update state on input change
+            const handleChange = (event) => {
+                setInputValue(event.target.value);
+            };
+
+            return (
+                <div>
+                <input
+                    type="text"
+                    value={inputValue}       // Sync state with input
+                    onChange={handleChange}  // Update state on user input
+                />
+                <p>You typed: {inputValue}</p>
+                </div>
+            );
+            }
+
+        export default TwoWayBinding;
+
 19. What does async await get compiled into?
+    =>
+    - When you use async/await in JavaScript, it gets converted into Promises and .then() functions for older JavaScript versions.
+    -
 20. How to call 5 APIs in parallel and do something after all 5 responses have come?
+    => To call 5 APIs in parallel and do something after all 5 responses have come, you can use Promise.all(). This method allows you to wait for all promises (API calls) to resolve before proceeding with the next step.
 21. Divide a website Ui into small components for JS framework. 22. What happens in the background when I enter a website URL in the browser and hit enter?
 
 # YOUTUBE LINK
 
-    1. https://www.youtube.com/watch?v=CLVevQBbSUU
+    1.https://www.youtube.com/watch?v=CLVevQBbSUU&t=1608s
     2. https://youtu.be/QmfyWw3Cth8?si=wENiikM7lWjDFnhG
