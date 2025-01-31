@@ -348,7 +348,19 @@
     -
     -
 21. Divide a website Ui into small components for JS framework.
+
+-
+-
+-
+
 22. What happens in the background when I enter a website URL in the browser and hit enter?
+    => When you enter a website URL and press **Enter**, this happens:
+
+1. **Find Website** – Browser looks up the website’s IP address (DNS).
+1. **Connect** – Browser connects to the website’s server.
+1. **Request Page** – Browser asks the server for the webpage.
+1. **Server Sends Data** – Server sends HTML, CSS, JS, and images.
+1. **Show Page** – Browser processes and displays the webpage.
 
 # YOUTUBE LINK
 
