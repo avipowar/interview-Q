@@ -130,15 +130,109 @@
        Example: Instead of manually updating the UI, React does it automatically with its Virtual DOM
 
 10. How do JS frameworks work in the background?
+    => **Short Answer:**  
+     JS frameworks (like React, Angular, or Vue) work by providing a structured way to build web applications. They use a **virtual DOM** (in React) or **data binding** (in Angular/Vue) to efficiently update the UI when data changes, reducing direct DOM manipulation for better performance.
+
+    **Example:**  
+     In React, when state changes, it creates a virtual DOM diff, updates only the changed parts in the real DOM, and re-renders efficiently.
+
 11. Lifecycle Methods of React JS Components & Order?
+    => Lifecycle methods help manage component creation, updates, and removal. They provide hooks
+    for handling various events and states throughout a component's life cycle.
+
+    1. Mounting Phase
+       When a component is created and inserted into the DOM:
+
+       - constructor()
+       - static getDerivedStateFromProps()
+       - render()
+       - componentDidMount()
+
+    2. Updating Phase
+       When a component re-renders due to changes in props ~or state:
+
+       - static getDerivedStateFromProps()
+       - shouldComponentUpdate()
+       - render()
+       - getSnapshotBeforeUpdate()
+       - componentDidUpdate()
+
+    3. Unmounting Phase
+       When a component is removed from the DOM:
+       - componentWillUnmount()
+
 12. Difference between Pure Components vs High Order Components?
+    => Pure Components: These are React components that automatically check if they need to re-render. They only re-render if their props or state change, which helps improve performance.
+
+    => Higher-Order Components (HOCs): These are functions that take a component and return a new, enhanced version of it. They are used to share common functionality between components, like adding extra features or data.
+
 13. Difference between State vs Props vs Refs?
+    => 1) State: Internal data that a component manages and can change (e.g., a counter value).
+
+    => 2) Props: Data passed from a parent component to a child component. It’s read-only and can’t be changed by the child.
+    Example: <Child name="John" /> (here, name is a prop).
+
+    => 3) Refs: A way to directly access and manipulate DOM elements (e.g., focusing an input field).
+    Example: const inputRef = useRef();
+    import React, { useRef } from 'react';
+
+        function FocusInput() {
+            const inputRef = useRef(); // Create a ref
+
+            const focusInput = () => {
+                inputRef.current.focus(); // Focus the input field
+            };
+
+            return (
+                <div>
+                    <input ref={inputRef} type="text" placeholder="Type here..." />
+                    <button onClick={focusInput}>Focus Input</button>
+                </div>
+            );
+
+    }
+    What Happens Here:
+
+    1. inputRef is created using useRef().
+    2. The ref={inputRef} attaches the ref to the input field.
+    3. When you click the button, inputRef.current.focus() makes the input field active, so you can type without clicking on it.
+
 14. What are the latest versions of Reactjs and new features?
+    => As of October 2023, the latest stable version of React is React 18. Here are the key features and updates:
+
+    1. Concurrent Rendering:
+       React can now do many tasks at the same time, making your app faster and smoother.
+    2. Automatic Batching:
+       React groups multiple updates into one, so your app doesn’t waste time re-rendering too often.
+    3. New Hooks:
+       1. useId: Creates unique IDs for things like labels.
+       2. useTransition: Helps React focus on important updates first.
+    4. Suspense for Data Fetching:
+       Lets your app show a loading spinner while waiting for data to load.
+
 15. Difference between Class-based vs Function/hooks-based components?
+    => Class-Based Components:
+
+    1. Use JavaScript classes.
+    2. Require this keyword to access props and state.
+    3. Use lifecycle methods like componentDidMount, componentDidUpdate, etc.
+    4. More code and harder to read.
+
+    => Function/Hooks-Based Components:
+
+    1. Use plain JavaScript functions.
+    2. Use hooks like useState and useEffect for state and lifecycle.
+    3. Simpler, cleaner, and easier to read.
+    4. Modern and recommended way to write React components.
+
 16. What are Fragments in ReactJs?
 17. How can you maintain the State of an app in complex applications?
 18. Have you thought about implementing 2-way data binding?
 19. What does async await get compiled into?
 20. How to call 5 APIs in parallel and do something after all 5 responses have come?
-21. Divide a website Ui into small components for JS framework.
-22. What happens in the background when I enter a website URL in the browser and hit enter?
+21. Divide a website Ui into small components for JS framework. 22. What happens in the background when I enter a website URL in the browser and hit enter?
+
+# YOUTUBE LINK
+
+    1. https://www.youtube.com/watch?v=CLVevQBbSUU
+    2. https://youtu.be/QmfyWw3Cth8?si=wENiikM7lWjDFnhG
