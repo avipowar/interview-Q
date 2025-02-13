@@ -365,4 +365,28 @@
 # YOUTUBE LINK
 
     1.https://www.youtube.com/watch?v=CLVevQBbSUU&t=1608s
-    2. https://youtu.be/QmfyWw3Cth8?si=wENiikM7lWjDFnhG
+    2. https://www.youtube.com/watch?v=QmfyWw3Cth8
+
+<!-- Js InterView -->
+
+1. In Html Why used docType ?
+   => Doctype to tell the browser that which version of html we are using
+
+2. what is use of Head tag?
+   => Head tag is used to store metadata about the document, such as the document's title,
+   and it can also include the external links like our script files and css files
+
+3. In html we link our javascript file so what is the better place to link it head tag or like in the body tag before the closing?
+   => The Better place would be just before the closing body tag because we don't know what is written inside that script tag . (Each element in the HTML (like <div>, <p>, <h1>, etc.) is a DOM element)
+   if it is like accessing the dom elements and if we put it just before the body tag like in the head tag it the dom element won't be available there
+   So better to put just before the closing body tag
+
+4. If you ask you to not put in the body tag put it in the head tag and i like the code is accessing dom elements?
+   => we can do that with the attribute differ. which tell the browser to hold the javascript file and excuate
+   after the dom has been completed parsing
+
+5. Difference Between 3 and 4 Questions is?
+   => 3. When you place the script just before the closing </body> tag, the browser loads and parses the entire HTML first (including all the elements like <div>, <p>, etc.).
+   Only after the HTML is fully loaded does the browser run the script. This means the script can safely access any DOM element because they already exist.
+   4 When you place the script in the <head> tag with the defer attribute, the browser downloads the script early but waits to run it until after the HTML is fully loaded and parsed.
+   This means the script will not run immediately but will wait until all the DOM elements (like <div>, <p>, etc.) are ready. So, the script can still access the DOM elements safely.
